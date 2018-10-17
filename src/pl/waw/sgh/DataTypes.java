@@ -29,5 +29,36 @@ public class DataTypes {
 
         double d3 = Math.pow(d1, d2);  //2^3
         System.out.println("d3: " + d3);
+
+
+        int ii1, ii2;
+        ii1 = 4;
+        ii2 = 4;
+
+        //ii1<ii2
+        //ii1==ii2
+        //ii1<=ii2
+        //ii1>=ii2
+        if (ii1 == ii2) {
+            System.out.println("ii2=ii1");
+        } else {
+            System.out.println("ii2 not eq ii1");
+        }
+
+        boolean cond = ii1 == ii2;
+        //! negative
+        // || - OR
+        // && - AND
+        if (cond || ii2 > 3 && ii1 > 5) {
+            System.out.println("ii2=ii1");
+        } else {
+            System.out.println("ii2 not eq i1");
+        }
+
+        //? - then
+        // : - or
+
+        int iii = (ii1 > 5 ? 15 : 10);
+        ///if .....
     }
 }
