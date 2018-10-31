@@ -13,7 +13,7 @@ public class DoubleFloat {
         float f1 = d1.floatValue();
         d1.intValue();
         //convertive primitive to object type
-        Double d3 = Double.valueOf(d2)
+        Double d3 = Double.valueOf(d2);
         System.out.println(d1 * d2);
     }
 

@@ -17,5 +17,16 @@ public class PlayWithText {
 
         System.out.println(s3.substring(2));
         System.out.println(s3.substring(1, 4));
+
+        String s4 = "ABC";
+        // String s5 = "ABC";
+        String s5 = new String("ABC");
+
+        if (s4 == s5) {
+            System.out.println("s4 and s5 are equal");
+        } else {
+            System.out.println("s4 and s5 are not equal");
+        }
+
     }
 }
