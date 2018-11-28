@@ -12,8 +12,8 @@ public class Shape {
 
     public void setParams(double parA, double b, double r) {
         this.parA = parA;
-        parB = b;
-        parR = r;
+        this.parB = b;
+        this.parR = r;
     }
 
     public void setParB(double parB) {
@@ -27,12 +27,12 @@ public class Shape {
 
 
     public String toString() {
-        if(parR==0) {
-            return getClass().getSimpleName() + "(side a equals " + parA +
+        if(this.parR==0) {
+            return getClass().getSimpleName() + "(side a equals " + this.parA +
                     "), and the surface is: " + calculateSurface();
         } else {
-            return getClass().getSimpleName() + "(radius equals " + parR +
-                    "], and the surface is: " + calculateSurface();
+            return getClass().getSimpleName() + "(radius equals " + this.parR +
+                    "), and the surface is: " + calculateSurface();
         }
     }
 

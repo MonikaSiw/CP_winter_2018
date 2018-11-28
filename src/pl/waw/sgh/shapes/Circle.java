@@ -7,7 +7,7 @@ public class Circle extends Shape {
         }
 
         public double calculateSurface() {
-            return Math.PI * Math.pow(parR,2);
+            return Math.PI * Math.pow(this.parR,2);
         }
 
 }

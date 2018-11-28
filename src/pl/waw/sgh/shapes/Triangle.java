@@ -6,7 +6,7 @@ public class Triangle extends Shape {
     }
 
     public double calculateSurface() {
-        return 0.25 *Math.pow(parA,2) *Math.sqrt(3);
+        return 0.25 *Math.pow(this.parA,2) *Math.sqrt(3);
     }
 
 }
