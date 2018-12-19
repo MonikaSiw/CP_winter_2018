@@ -1,4 +1,4 @@
-package pl.waw.sgh.bank;
+package pl.waw.sgh.bank.GUIMonika;
 
 import javax.swing.*;
 
