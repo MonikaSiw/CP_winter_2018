@@ -41,37 +41,22 @@ public class Bank {
     return acc;
   }
 
-  private Account findAccountByID(Integer accID) {
-    for (Account acc : accList) { // : - this is in
+  private Account findAccountByID(Integer accID) throws NonExistingAccountException{
+    for (Account acc : accList) {
       if (acc.getAccountID().equals(accID)) {
         return acc; }
     }
-
-    return null;
+ // instead of returning null throw exceptions!!!
+    throw new NonExistingAccountException(accID);
   }
 
   //add also validation, you can use if,else, print messages if there is no account, id negative message, transfer 0, no existing account
-  public void transfer(Integer fromAccID, Integer toAccID, Double amount) {
+  public void transfer(Integer fromAccID, Integer toAccID, Double amount) throws NotEnoughMoneyException, NonExistingAccountException{
     Account fromA = findAccountByID(fromAccID);
     Account toA = findAccountByID(toAccID);
-    if (fromA == null) {
-      System.out.println("Unfortunately, an account that we want to transfer money from does not exist.");
-    }
-    if (toA == null) {
-      System.out.println("Unfortunately, an account that we want to transfer money to does not exist.");
-    }
 
-    if (fromA != null && toA != null) {
-      BigDecimal BalanceFrom = fromA.getBalance();
-      if (BalanceFrom.compareTo(BigDecimal.valueOf(amount)) == -1) {
-        System.out.println("There is not enough money on account " + fromA.getAccountID() +", which belongs to " + fromA.getCustomer().getFirstName() + " " + fromA.getCustomer().getLastName() );
-        System.out.println(" ");
-      } else {
-        toA.deposit(amount);
-        fromA.charge(amount);
-        System.out.println("Transfer from account " + fromA.getAccountID() + " to " + toA.getAccountID() + " of amount " + amount +" was successful.");
-      }
-    }
+      fromA.charge(amount);
+      toA.deposit(amount);
 
   }
     @Override

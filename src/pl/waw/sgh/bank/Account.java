@@ -34,16 +34,14 @@ public abstract class Account {
 
   public void deposit (Double amount) {
 // this.balance is here optional
-    balance = balance.add(BigDecimal.valueOf(amount));
+    this.balance = balance.add(BigDecimal.valueOf(amount));
   }
 
-  public void charge(Double amount) {
-    if (balance.compareTo(BigDecimal.valueOf(amount)) == -1) {
-      System.out.println(customer.getFirstName() + " " + customer.getLastName() + " cannot be charged for " + amount );
-    }
-    else {
-      balance = balance.subtract(BigDecimal.valueOf(amount));
-    }
+  public void charge(Double amount) throws NotEnoughMoneyException {
+    BigDecimal newBal = balance.subtract(new BigDecimal(amount));
+    if(newBal.compareTo(new BigDecimal(0))<0) {
+      throw new NotEnoughMoneyException(balance); }
+    balance = newBal;
   }
 
   //getter and setter
